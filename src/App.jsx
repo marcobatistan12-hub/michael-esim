@@ -68,14 +68,14 @@ function Header({ user, onLogout, menuOpen, setMenuOpen, onNavigate }) {
   return (
     <header className="header">
       <div className="container header-content">
-        <div className="logo">
+        <div className="logo" onClick={() => onNavigate('home')} style={{cursor: 'pointer'}}>
           <Smartphone className="logo-icon" />
-          <h1>MICHAEL ESIM</h1>
+          <h1>NEXUS ESIM</h1>
         </div>
 
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); setMenuOpen(false); }}>Home</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); window.location.href = 'https://wa.me/5512920058001?text=Olá%20MICHAEL%20ESIM!%20Gostaria%20de%20suporte'; }}>Suporte</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); window.location.href = 'https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte'; }}>Suporte</a>
           {user ? (
             <>
               <span className="user-name">Olá, {user.name}</span>
@@ -100,26 +100,26 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>MICHAEL ESIM</h3>
-            <p>Conectividade global com eSIM. Rápido, seguro e confiável.</p>
+            <h3>NEXUS ESIM</h3>
+            <p>Conectividade premium com tecnologia eSIM. A melhor cobertura 5G do Brasil.</p>
           </div>
           <div className="footer-section">
             <h4>Suporte</h4>
-            <a href="https://wa.me/5512920058001?text=Olá%20MICHAEL%20ESIM!%20Gostaria%20de%20suporte" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte" target="_blank" rel="noopener noreferrer">
               WhatsApp: (12) 92900-5800
             </a>
           </div>
           <div className="footer-section">
             <h4>Características</h4>
             <ul>
-              <li>✓ Ativação Instantânea</li>
-              <li>✓ Cobertura Global</li>
-              <li>✓ Suporte 24/7</li>
+              <li>✓ Rede Claro e Vivo</li>
+              <li>✓ Tecnologia 5G</li>
+              <li>✓ Cobertura Nacional</li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 MICHAEL ESIM. Todos os direitos reservados.</p>
+          <p>&copy; 2024 NEXUS ESIM. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

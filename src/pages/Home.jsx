@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Zap, Shield, Globe, Check } from 'lucide-react'
+import { Zap, Shield, Globe, Check, Wifi, SignalHigh } from 'lucide-react'
 import './Home.css'
 
 const PLANS = [
@@ -9,7 +9,7 @@ const PLANS = [
     data: '3GB',
     validity: '7 dias',
     price: 9.90,
-    features: ['3GB de dados', 'Chamadas ilimitadas', 'Suporte 24/7'],
+    features: ['3GB de dados 5G', 'Rede Claro/Vivo', 'Suporte 24/7'],
     popular: false
   },
   {
@@ -18,7 +18,7 @@ const PLANS = [
     data: '10GB',
     validity: '30 dias',
     price: 19.90,
-    features: ['10GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Suporte prioritário'],
+    features: ['10GB de dados 5G', 'Rede Claro/Vivo', 'SMS ilimitados', 'Suporte prioritário'],
     popular: true
   },
   {
@@ -27,7 +27,7 @@ const PLANS = [
     data: '25GB',
     validity: '30 dias',
     price: 34.90,
-    features: ['25GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Roaming internacional', 'Suporte VIP'],
+    features: ['25GB de dados 5G', 'Rede Claro/Vivo', 'SMS ilimitados', 'Roaming internacional', 'Suporte VIP'],
     popular: false
   },
   {
@@ -36,7 +36,7 @@ const PLANS = [
     data: '50GB',
     validity: '60 dias',
     price: 49.90,
-    features: ['50GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Roaming em 180 países', 'Suporte VIP 24/7'],
+    features: ['50GB de dados 5G', 'Rede Claro/Vivo', 'SMS ilimitados', 'Roaming em 180 países', 'Suporte VIP 24/7'],
     popular: false
   }
 ]
@@ -55,12 +55,16 @@ export default function Home({ user, onCheckout }) {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Conectividade Global com eSIM</h1>
-            <p>Ative seu eSIM em segundos. Sem complicações, sem esperas.</p>
+            <div className="badge-5g">5G EM TODO O BRASIL</div>
+            <h1>Conectividade Premium com NEXUS eSIM</h1>
+            <p>Utilize as redes <strong>Claro</strong> e <strong>Vivo</strong> com ativação instantânea e a melhor velocidade do mercado.</p>
+            <div className="network-badges">
+              <span className="network-badge">Rede Claro</span>
+              <span className="network-badge">Rede Vivo</span>
+            </div>
             <button className="btn btn-primary btn-large" onClick={() => {
-              if (!user) {
-                window.location.href = '#login'
-              }
+              const element = document.getElementById('plans');
+              element?.scrollIntoView({ behavior: 'smooth' });
             }}>
               Começar Agora
             </button>
@@ -68,8 +72,11 @@ export default function Home({ user, onCheckout }) {
           <div className="hero-image">
             <div className="phone-mockup">
               <div className="phone-screen">
-                <div className="esim-icon">📱</div>
-                <p>eSIM Ativo</p>
+                <div className="esim-icon">
+                  <SignalHigh size={64} />
+                </div>
+                <div className="status-5g">5G ATIVO</div>
+                <p>NEXUS eSIM</p>
               </div>
             </div>
           </div>
@@ -79,29 +86,29 @@ export default function Home({ user, onCheckout }) {
       {/* Features Section */}
       <section className="features">
         <div className="container">
-          <h2>Por que escolher MICHAEL ESIM?</h2>
+          <h2>Por que escolher NEXUS eSIM?</h2>
           <div className="features-grid">
             <div className="feature-card">
+              <Wifi className="feature-icon" />
+              <h3>Rede Dual Carrier</h3>
+              <p>Conexão automática na melhor rede disponível (Claro ou Vivo) em sua região.</p>
+            </div>
+            <div className="feature-card">
               <Zap className="feature-icon" />
-              <h3>Ativação Instantânea</h3>
-              <p>Ative seu eSIM em segundos, sem necessidade de cartão físico</p>
+              <h3>Velocidade 5G</h3>
+              <p>Aproveite o máximo da tecnologia 5G no Brasil todo para navegar sem travar.</p>
             </div>
             <div className="feature-card">
               <Globe className="feature-icon" />
-              <h3>Cobertura Global</h3>
-              <p>Conecte-se em mais de 180 países com a mesma linha</p>
-            </div>
-            <div className="feature-card">
-              <Shield className="feature-icon" />
-              <h3>Segurança Garantida</h3>
-              <p>Seus dados protegidos com as melhores tecnologias de criptografia</p>
+              <h3>Cobertura Nacional</h3>
+              <p>Sinal garantido em 100% dos municípios brasileiros com roaming inteligente.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Plans Section */}
-      <section className="plans">
+      <section className="plans" id="plans">
         <div className="container">
           <h2>Escolha seu Plano</h2>
           <div className="plans-grid">
@@ -111,7 +118,7 @@ export default function Home({ user, onCheckout }) {
                 <h3>{plan.name}</h3>
                 <div className="plan-data">
                   <span className="data-amount">{plan.data}</span>
-                  <span className="data-label">de dados</span>
+                  <span className="data-label">de dados 5G</span>
                 </div>
                 <div className="plan-validity">Válido por {plan.validity}</div>
                 <div className="plan-price">
@@ -140,13 +147,13 @@ export default function Home({ user, onCheckout }) {
       {/* CTA Section */}
       <section className="cta">
         <div className="container">
-          <h2>Pronto para conectar?</h2>
-          <p>Ative seu eSIM agora e comece a usar em minutos</p>
+          <h2>Pronto para conectar com a melhor rede?</h2>
+          <p>Ative seu NEXUS eSIM agora e tenha 5G da Claro e Vivo no seu celular.</p>
           <button className="btn btn-primary btn-large" onClick={() => handleSelectPlan(PLANS[1])}>
             Ativar eSIM Agora
           </button>
           <p className="support-text">
-            Dúvidas? <a href="https://wa.me/5512920058001?text=Olá%20MICHAEL%20ESIM!%20Gostaria%20de%20suporte" target="_blank" rel="noopener noreferrer">Fale conosco no WhatsApp</a>
+            Dúvidas? <a href="https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte" target="_blank" rel="noopener noreferrer">Fale conosco no WhatsApp</a>
           </p>
         </div>
       </section>
