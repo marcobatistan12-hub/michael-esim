@@ -70,19 +70,19 @@ function Header({ user, onLogout, menuOpen, setMenuOpen, onNavigate }) {
       <div className="container header-content">
         <div className="logo" onClick={() => onNavigate('home')} style={{cursor: 'pointer'}}>
           <Smartphone className="logo-icon" />
-          <h1>NEXUS ESIM</h1>
+          <h1 className="brand-name">NEXUS ESIM</h1>
         </div>
 
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); setMenuOpen(false); }}>Home</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); window.location.href = 'https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte'; }}>Suporte</a>
+          <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('home'); setMenuOpen(false); }}>HOME</a>
+          <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); window.location.href = 'https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte'; }}>SUPORTE</a>
           {user ? (
-            <>
-              <span className="user-name">Olá, {user.name}</span>
-              <button className="btn btn-secondary" onClick={onLogout}>Sair</button>
-            </>
+            <div className="user-info">
+              <span className="user-name">OLÁ, {user.name.toUpperCase()}</span>
+              <button className="btn btn-secondary btn-sm" onClick={onLogout}>SAIR</button>
+            </div>
           ) : (
-            <button className="btn btn-primary" onClick={() => { onNavigate('login'); setMenuOpen(false); }}>Login</button>
+            <button className="btn btn-primary" onClick={() => { onNavigate('login'); setMenuOpen(false); }}>LOGIN</button>
           )}
         </nav>
 
@@ -100,26 +100,26 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>NEXUS ESIM</h3>
-            <p>Conectividade premium com tecnologia eSIM. A melhor cobertura 5G do Brasil.</p>
+            <h3 className="footer-brand">NEXUS ESIM</h3>
+            <p>CONECTIVIDADE PREMIUM COM TECNOLOGIA ESIM. A MELHOR COBERTURA 5G DO BRASIL NAS REDES CLARO E VIVO.</p>
           </div>
           <div className="footer-section">
-            <h4>Suporte</h4>
-            <a href="https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte" target="_blank" rel="noopener noreferrer">
-              WhatsApp: (12) 92900-5800
+            <h4>SUPORTE</h4>
+            <a href="https://wa.me/5512920058001?text=Olá%20NEXUS%20ESIM!%20Gostaria%20de%20suporte" target="_blank" rel="noopener noreferrer" className="footer-link">
+              WHATSAPP: (12) 92900-5800
             </a>
           </div>
           <div className="footer-section">
-            <h4>Características</h4>
-            <ul>
-              <li>✓ Rede Claro e Vivo</li>
-              <li>✓ Tecnologia 5G</li>
-              <li>✓ Cobertura Nacional</li>
+            <h4>CARACTERÍSTICAS</h4>
+            <ul className="footer-list">
+              <li>✓ REDE CLARO E VIVO</li>
+              <li>✓ TECNOLOGIA 5G</li>
+              <li>✓ COBERTURA NACIONAL</li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 NEXUS ESIM. Todos os direitos reservados.</p>
+          <p>&copy; 2024 NEXUS ESIM. TODOS OS DIREITOS RESERVADOS.</p>
         </div>
       </div>
     </footer>
