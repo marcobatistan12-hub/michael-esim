@@ -3,10 +3,10 @@ import { ArrowLeft, Phone, MapPin } from 'lucide-react'
 import './Checkout.css'
 
 const PLANS = [
-  { id: 1, name: 'Plano Básico', data: '5GB', price: 19.90 },
-  { id: 2, name: 'Plano Popular', data: '15GB', price: 49.90 },
-  { id: 3, name: 'Plano Premium', data: '50GB', price: 99.90 },
-  { id: 4, name: 'Plano Ultra', data: '100GB', price: 179.90 }
+  { id: 1, name: 'Plano Básico', data: '3GB', price: 9.90 },
+  { id: 2, name: 'Plano Popular', data: '10GB', price: 19.90 },
+  { id: 3, name: 'Plano Premium', data: '25GB', price: 34.90 },
+  { id: 4, name: 'Plano Ultra', data: '50GB', price: 49.90 }
 ]
 
 export default function Checkout({ user, onBack }) {

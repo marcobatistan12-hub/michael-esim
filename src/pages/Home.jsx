@@ -6,37 +6,37 @@ const PLANS = [
   {
     id: 1,
     name: 'Plano Básico',
-    data: '5GB',
+    data: '3GB',
     validity: '7 dias',
-    price: 19.90,
-    features: ['5GB de dados', 'Chamadas ilimitadas', 'Suporte 24/7'],
+    price: 9.90,
+    features: ['3GB de dados', 'Chamadas ilimitadas', 'Suporte 24/7'],
     popular: false
   },
   {
     id: 2,
     name: 'Plano Popular',
-    data: '15GB',
+    data: '10GB',
     validity: '30 dias',
-    price: 49.90,
-    features: ['15GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Suporte prioritário'],
+    price: 19.90,
+    features: ['10GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Suporte prioritário'],
     popular: true
   },
   {
     id: 3,
     name: 'Plano Premium',
-    data: '50GB',
+    data: '25GB',
     validity: '30 dias',
-    price: 99.90,
-    features: ['50GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Roaming internacional', 'Suporte VIP'],
+    price: 34.90,
+    features: ['25GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Roaming internacional', 'Suporte VIP'],
     popular: false
   },
   {
     id: 4,
     name: 'Plano Ultra',
-    data: '100GB',
+    data: '50GB',
     validity: '60 dias',
-    price: 179.90,
-    features: ['100GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Roaming em 180 países', 'Suporte VIP 24/7'],
+    price: 49.90,
+    features: ['50GB de dados', 'Chamadas ilimitadas', 'SMS ilimitados', 'Roaming em 180 países', 'Suporte VIP 24/7'],
     popular: false
   }
 ]

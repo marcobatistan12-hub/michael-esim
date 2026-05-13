@@ -14,10 +14,10 @@ Um site moderno e profissional para venda de planos de eSIM com interface intuit
 
 ## 📋 Planos Disponíveis
 
-1. **Plano Básico** - 5GB por R$ 19,90
-2. **Plano Popular** - 15GB por R$ 49,90 (Mais Popular)
-3. **Plano Premium** - 50GB por R$ 99,90
-4. **Plano Ultra** - 100GB por R$ 179,90
+1. **Plano Básico** - 3GB por R$ 9,90
+2. **Plano Popular** - 10GB por R$ 19,90 (Mais Popular)
+3. **Plano Premium** - 25GB por R$ 34,90
+4. **Plano Ultra** - 50GB por R$ 49,90
 
 ## 🛠️ Tecnologias
 
