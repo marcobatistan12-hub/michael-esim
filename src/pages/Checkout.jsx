@@ -48,7 +48,11 @@ Por favor, confirme meu pedido.`
 
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/5512920058001?text=${encodedMessage}`
-    window.open(whatsappUrl, '_blank')
+    
+    // Tentar abrir no WhatsApp Web primeiro, depois fallback para link direto
+    setTimeout(() => {
+      window.location.href = whatsappUrl
+    }, 100)
   }
 
   return (
