@@ -30,12 +30,64 @@
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   position: relative;
   z-index: 1;
+}
+
+.hero-content.full-width {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content.full-width .hero-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content.full-width .network-badges-container {
+  justify-content: center;
+}
+
+.mockup-section {
+  padding: 100px 0;
+  background-color: white;
+}
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.mockup-text {
+  text-align: left;
+}
+
+.mockup-list {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.mockup-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.mockup-list svg {
+  color: var(--primary);
 }
 
 .badge-5g {

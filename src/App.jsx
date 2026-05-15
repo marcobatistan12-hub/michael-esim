@@ -69,7 +69,7 @@ function Header({ user, onLogout, menuOpen, setMenuOpen, onNavigate }) {
     <header className="header">
       <div className="container header-content">
         <div className="logo" onClick={() => onNavigate('home')} style={{cursor: 'pointer'}}>
-          <Smartphone className="logo-icon" />
+          <Smartphone className="logo-icon" color="#7c3aed" />
           <h1 className="brand-name">NEXUS ESIM</h1>
         </div>
 

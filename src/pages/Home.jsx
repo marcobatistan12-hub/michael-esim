@@ -8,7 +8,7 @@ const PLANS = [
     name: 'PLANO BÁSICO',
     data: '3GB',
     validity: '7 DIAS',
-    price: 9.90,
+    price: 8.00,
     features: ['3GB DE DADOS 5G', 'REDE CLARO/VIVO', 'SUPORTE 24/7'],
     popular: false
   },
@@ -17,7 +17,7 @@ const PLANS = [
     name: 'PLANO POPULAR',
     data: '10GB',
     validity: '30 DIAS',
-    price: 19.90,
+    price: 16.00,
     features: ['10GB DE DADOS 5G', 'REDE CLARO/VIVO', 'SMS ILIMITADOS', 'SUPORTE PRIORITÁRIO'],
     popular: true
   },
@@ -26,7 +26,7 @@ const PLANS = [
     name: 'PLANO PREMIUM',
     data: '25GB',
     validity: '30 DIAS',
-    price: 34.90,
+    price: 30.00,
     features: ['25GB DE DADOS 5G', 'REDE CLARO/VIVO', 'SMS ILIMITADOS', 'ROAMING INTERNACIONAL', 'SUPORTE VIP'],
     popular: false
   },
@@ -35,7 +35,7 @@ const PLANS = [
     name: 'PLANO ULTRA',
     data: '50GB',
     validity: '60 DIAS',
-    price: 49.90,
+    price: 40.00,
     features: ['50GB DE DADOS 5G', 'REDE CLARO/VIVO', 'SMS ILIMITADOS', 'ROAMING EM 180 PAÍSES', 'SUPORTE VIP 24/7'],
     popular: false
   }
@@ -54,7 +54,7 @@ export default function Home({ user, onCheckout }) {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content full-width">
             <div className="badge-5g">5G EM TODO O BRASIL</div>
             <h1 className="hero-title">CONECTIVIDADE PREMIUM COM <span className="text-gradient">NEXUS ESIM</span></h1>
             <p className="hero-subtitle">Utilize a infraestrutura das redes <strong>CLARO</strong> e <strong>VIVO</strong> com ativação instantânea e a maior velocidade do Brasil.</p>
@@ -77,35 +77,6 @@ export default function Home({ user, onCheckout }) {
               }}>
                 COMEÇAR AGORA <ArrowRight size={20} style={{marginLeft: '8px'}} />
               </button>
-            </div>
-          </div>
-          
-          <div className="hero-visual">
-            <div className="floating-card status-5g-floating">
-              <SignalHigh size={24} color="#7c3aed" />
-              <div>
-                <span className="status-label">STATUS</span>
-                <span className="status-value">5G ATIVO</span>
-              </div>
-            </div>
-            <div className="phone-mockup-wrapper">
-              <div className="phone-mockup">
-                <div className="phone-screen">
-                  <div className="brand-logo-vertical">NEXUS</div>
-                  <div className="esim-visual">
-                    <div className="chip-inner"></div>
-                  </div>
-                  <div className="phone-footer">
-                    <p>CONECTADO</p>
-                    <div className="bars">
-                      <div className="bar active"></div>
-                      <div className="bar active"></div>
-                      <div className="bar active"></div>
-                      <div className="bar active"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -165,7 +136,7 @@ export default function Home({ user, onCheckout }) {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">ESCOLHA SEU <span className="text-gradient">PLANO 5G</span></h2>
-            <p className="section-subtitle">PLANOS FLEXÍVEIS PARA TODAS AS NECESSIDADES.</p>
+            <p className="section-subtitle">PLANOS FLEXÍVEIS COM OS MELHORES PREÇOS DO MERCADO.</p>
           </div>
           
           <div className="plans-grid">
@@ -180,7 +151,7 @@ export default function Home({ user, onCheckout }) {
                 <div className="plan-validity">VÁLIDO POR {plan.validity}</div>
                 <div className="plan-price">
                   <span className="currency">R$</span>
-                  <span className="price">{plan.price.toFixed(2)}</span>
+                  <span className="price">{plan.price.toFixed(0)}</span>
                 </div>
                 <ul className="plan-features">
                   {plan.features.map((feature, idx) => (
@@ -198,6 +169,51 @@ export default function Home({ user, onCheckout }) {
                 </button>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mockup Section */}
+      <section className="mockup-section">
+        <div className="container">
+          <div className="mockup-grid">
+            <div className="hero-visual">
+              <div className="floating-card status-5g-floating">
+                <SignalHigh size={24} color="#7c3aed" />
+                <div>
+                  <span className="status-label">STATUS</span>
+                  <span className="status-value">5G ATIVO</span>
+                </div>
+              </div>
+              <div className="phone-mockup-wrapper">
+                <div className="phone-mockup">
+                  <div className="phone-screen">
+                    <div className="brand-logo-vertical">NEXUS</div>
+                    <div className="esim-visual">
+                      <div className="chip-inner"></div>
+                    </div>
+                    <div className="phone-footer">
+                      <p>CONECTADO</p>
+                      <div className="bars">
+                        <div className="bar active"></div>
+                        <div className="bar active"></div>
+                        <div className="bar active"></div>
+                        <div className="bar active"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mockup-text">
+              <h2 className="section-title">TECNOLOGIA <span className="text-gradient">ESIM</span></h2>
+              <p>TRANSFORME SEU CELULAR COM A MELHOR CONECTIVIDADE VIRTUAL DO BRASIL. SEM CHIP FÍSICO, SEM ESPERAS, APENAS CONEXÃO.</p>
+              <ul className="mockup-list">
+                <li><Check size={20} /> ATIVAÇÃO VIA QR CODE</li>
+                <li><Check size={20} /> MANTENHA SEU NÚMERO ATUAL</li>
+                <li><Check size={20} /> SUPORTE PARA TODOS OS MODELOS COMPATÍVEIS</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
