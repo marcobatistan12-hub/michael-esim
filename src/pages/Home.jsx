@@ -26,7 +26,7 @@ const PLANS = [
     name: 'PLANO PREMIUM',
     data: '25GB',
     validity: '30 DIAS',
-    price: 30.00,
+    price: 35.00,
     features: ['25GB DE DADOS 5G', 'REDE CLARO/VIVO', 'SMS ILIMITADOS', 'ROAMING INTERNACIONAL', 'SUPORTE VIP'],
     popular: false
   },
